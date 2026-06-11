@@ -18,15 +18,15 @@ class SpatialMap:
         """
         Receives a 'ping' and maps it to our local grid.
         """
+        # Store as numpy array for fast math later
+        self.objects[obj_id] = np.array([x, y, z], dtype=np.float64)
+
         # 2. BOUNDARY CHECKS (The 8x8 Landform)
         # If an object is outside -4000 to +4000, it's off the map.
         if not (-BOUNDS_METERS <= x <= BOUNDS_METERS) or \
            not (-BOUNDS_METERS <= y <= BOUNDS_METERS):
-            print(f"WARNING: Object {obj_id} out of bounds!")
-            return
-
-        # Store as numpy array for fast math later
-        self.objects[obj_id] = np.array([x, y, z], dtype=np.float64)
+            print(f"WARNING: Object {obj_id} out of bounds at "
+                  f"[{x:.4f}, {y:.4f}]!")
 
     def get_object_pos(self, obj_id):
         return self.objects.get(obj_id, None)
