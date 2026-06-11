@@ -56,10 +56,11 @@ class SpatialMap:
         self.objects = {} 
 
     def update_object(self, obj_id, x, y, z):
+        self.objects[obj_id] = np.array([x, y, z], dtype=np.float64)
         if not (-BOUNDS_METERS <= x <= BOUNDS_METERS) or \
            not (-BOUNDS_METERS <= y <= BOUNDS_METERS):
-            return
-        self.objects[obj_id] = np.array([x, y, z], dtype=np.float64)
+            print(f"WARNING: Object {obj_id} out of bounds at "
+                  f"[{x:.4f}, {y:.4f}]!")
 
     def get_object_pos(self, obj_id):
         return self.objects.get(obj_id, None)
