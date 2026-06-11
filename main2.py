@@ -95,7 +95,7 @@ def main():
             print(f"PING: {timestamp} | Dist: {dist:.4f}m")
 
             # --- MOVEMENT ---
-            move_step = speed_mps * FRAME_TIME
+            move_step = speed_mps * FRAME_TIME / np.sqrt(2)
             drone_x += move_step
             drone_y += move_step
 

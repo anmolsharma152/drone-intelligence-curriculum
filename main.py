@@ -62,7 +62,7 @@ def main():
 
             # --- C. SIMULATE MOVEMENT ---
             # Move the drone for the next frame (Speed * Time)
-            move_step = speed_mps * FRAME_TIME
+            move_step = speed_mps * FRAME_TIME / np.sqrt(2)
             drone_x += move_step
             drone_y += move_step
 
