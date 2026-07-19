@@ -1,5 +1,14 @@
 # Drone Intelligence Curriculum
 
+
+## Docs
+
+| Doc | Purpose |
+|-----|---------|
+| **[docs/STATUS.md](./docs/STATUS.md)** | Handoff status |
+| [docs/setup.md](./docs/setup.md) | Setup |
+| [AGENTS.md](./AGENTS.md) | Agent guidance |
+
 A self-guided, project-based journey from 2D physics simulation to
 reinforcement learning for autonomous drone flight.
 
